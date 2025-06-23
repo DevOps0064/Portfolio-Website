@@ -1,9 +1,9 @@
 {
     "rules":{
-        "decleration-block-no-duplicate-properties":true,
+        "declaration-block-no-duplicate-properties":true,
         "no-duplicate-selectors":true,
         "property-case":"lower",
-        "vlaue-keyword-case":"lower",
+        "value-keyword-case":"lower",
         "selector-type-case":"lower",
         "block-no-empty":true
 

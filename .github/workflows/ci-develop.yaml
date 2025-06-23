@@ -1,0 +1,26 @@
+name: ci-wf
+on:
+  pull_request:
+    branches:
+      - develop
+    types:
+      - opened
+      - synchronize
+  push:
+    branches:
+      - develop
+jobs:
+  ci-develop-job:
+   runs-on: ubuntu-latest
+   steps:
+     - name: cloning repo to runner
+       uses: actions/checkout@v4
+     - name: repo detail
+       run: |
+          git branch
+          echo "event name :${{github.event_name}}"
+          echo "actor name :${{github.actor}}"
+     - name: linting html file
+       run: npx htmlhint "**/*.html" 
+     - name: linting css file
+       run: npx stylelint "**/*.css"
